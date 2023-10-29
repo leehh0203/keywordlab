@@ -1,0 +1,39 @@
+.blind{
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0,0,0,0);
+    margin: -1px;
+}
+
+.dc{
+    color: #175fe8;
+}
+
+.section .fp-is-overflow{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+padding: 0 30px;
+}
+.section .inner{
+    width: 100%;
+    
+}
+
+#fp-nav.fp-right li:last-child{display: none;}
+
+
+
+
+/* 모바일 */
+@media (max-width: 767px) {
+
+    /* 풀페이지네비 */
+    .fp-right{display: none;}
+    
+}

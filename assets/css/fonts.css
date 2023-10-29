@@ -1,0 +1,70 @@
+/* @font-face {
+    font-family: xeicon;
+    src: url(https://cdn.jsdelivr.net/npm/xeicon@2.3.3/fonts/xeicon.eot?3ka2yj);
+    src: url(https://cdn.jsdelivr.net/npm/xeicon@2.3.3/fonts/xeicon.eot?3ka2yj#iefix) format("embedded-opentype")
+        ,url(https://cdn.jsdelivr.net/npm/xeicon@2.3.3/fonts/xeicon.woff2?3ka2yj) format("woff2")
+        ,url(https://cdn.jsdelivr.net/npm/xeicon@2.3.3/fonts/xeicon.ttf?3ka2yj) format("truetype")
+        ,url(https://cdn.jsdelivr.net/npm/xeicon@2.3.3/fonts/xeicon.woff?3ka2yj) format("woff")
+        ,url(https://cdn.jsdelivr.net/npm/xeicon@2.3.3/fonts/xeicon.svg?3ka2yj#xeicon) format("svg");
+    font-weight: 400;
+    font-style: normal
+} */
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../font/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url(http://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: xeicon;
+    src: url(fonts/xeicon.eot?3ka2yj);
+    src: url(fonts/xeicon.eot?3ka2yj#iefix) format("embedded-opentype"),url(fonts/xeicon.woff2?3ka2yj) format("woff2"),url(fonts/xeicon.ttf?3ka2yj) format("truetype"),url(fonts/xeicon.woff?3ka2yj) format("woff"),url(fonts/xeicon.svg?3ka2yj#xeicon) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: xeicon;
+    src: url(../font/xeicon.eot);
+    src: url(../font/xeicon.eot) format("embedded-opentype"),
+    url(../font/xeicon.woff2) format("woff2"),
+    url(../font/xeicon.ttf) format("truetype"),
+    url(../font/xeicon.woff) format("woff"),
+    url(../font/xeicon.svg) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+

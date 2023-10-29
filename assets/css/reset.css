@@ -1,0 +1,66 @@
+*{margin:0;padding:0;font:inherit;color:inherit;}
+*, :after, :before {box-sizing:border-box;flex-shrink:0;}
+:root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;line-height:1.5;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4}
+html, body {height:100%;}
+img, picture, video, canvas, svg {display: block;max-width:100%;}
+button {background:none;border:0;cursor:pointer;}
+a {text-decoration:none}
+table {border-collapse:collapse;border-spacing:0}
+
+ul{list-style: none;}
+fieldset{border: 0;}
+
+
+/* setting */
+html{
+    font-size: 10px;
+}
+body{
+    font-family:'pretendard', 'Noto Sans KR', "나눔고딕", NanumGothic, "Nanum Gothic","돋움", Dotum, Arial, sans-serif;;
+    color: #666;
+    word-break: keep-all;
+    font-size: 12px;
+    line-height: 1;
+}
+
+
+
+/* @media (max-width: 1280px) {
+    body{font-size:10.98px;}
+}
+
+@media (max-width: 1023px) {
+    body{font-size:8.78px;}
+}
+
+@media (max-width: 767px) {
+    body{font-size:9px;}
+} */
+
+@media (max-width:1536px){
+	html{font-size:0.6510vw;} /* 10 */
+}
+@media (max-width:1280px){
+	html{font-size:0.8594vw;} /* 10 -> 11*/
+}
+@media (max-width:800px){
+	html{font-size:1.375vw} /* 10 -> 11*/
+}
+@media (max-width:640px){
+	html{font-size:1.7188vw}  /* 10 -> 11*/
+}
+@media ( max-width: 480px ){
+	html{font-size:2.2vw}  /* 10 */
+}
+@media ( max-width: 412px ){
+	html{font-size:2.4272vw}  /* 10 */
+}
+@media (max-width:390px){
+	html{font-size:2.1795vw}  /* 10 -> 8.5 */
+}
+
+
+
+
+
+
