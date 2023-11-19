@@ -1,74 +1,58 @@
-
-//풀페이지
-Selectio1nFlag = true;
-Selectio2nFlag = true;
-Selectio3nFlag = true;
-Selectio4nFlag = true;
-Selectio5nFlag = true;
-Selectio6nFlag = true;
-
-
-var myFullpage = new fullpage('#fullpage', {
-    // verticalCentered: true,
-    // anchors: ['anchor1', 'anchor2', 'anchor3'],
+//fullpage
+const myFullpage = new fullpage('#fullpage', {
     navigation: true,
-    responsiveWidth: 1279,
+    responsiveWidth: 1279, //1279이상일때 부터 적용하도록
+    
     afterLoad: function(origin, destination, direction){
+        //afterLoad 풀페이지화면이 전환되고 나서 실행
+        //인덱스 번호로 이벤트 넣기
 
-        if(destination.index === 1 && Selectio1nFlag == true){
+        if(destination.index === 1){ //index가 1일때 show를 추가한다.
             $('.sc-onlinemarketer').addClass('show')
-            Selectio1nFlag = false;
-        }else if(destination.index === 2 && Selectio2nFlag == true){
-            $('.sc-services').addClass('show')
-            Selectio1nFlag = false;
-        }else if(destination.index === 3 && Selectio3nFlag == true){
-            $('.sc-history').addClass('show')
-            Selectio1nFlag = false;
-        }else if(destination.index === 4 && Selectio4nFlag == true){
-            $('.sc-advertiser').addClass('show')
-            Selectio1nFlag = false;
-        }else if(destination.index === 5 && Selectio5nFlag == true){
-            $('.sc-news').addClass('show')
-            Selectio1nFlag = false;
-        }else if(destination.index === 6 && Selectio6nFlag == true){
-            $('.sc-visual2').addClass('show')
-            Selectio1nFlag = false;
-        }
-
-        //상단이동버튼
-        if (destination.index == 1) {
-            $('.btn-bottom-wrap').addClass('on');
-        } else if (destination.index > 0) {
-            // 여기에 destination.index가 0보다 클 경우 실행하고자 하는 코드를 추가합니다.
+            $('.btn-bottom-wrap').addClass('on'); //상단 이동 버튼
+        }else if (destination.index > 0) {
         } else {
             $('.btn-bottom-wrap').removeClass('on');
         }
 
+        if(destination.index === 2 ){
+            $('.sc-services').addClass('show')
+        }
+        if(destination.index === 3){
+            $('.sc-history').addClass('show')
+        }
+        if(destination.index === 4){
+            $('.sc-advertiser').addClass('show')
+        }
+        if(destination.index === 5){
+            $('.sc-news').addClass('show')
+        }
+        if(destination.index === 6){
+            $('.sc-visual2').addClass('show')
+        }
     }
-
-
 });
 
-
 //상단이동버튼
+//fullpage상단이동
 $('.btn-top').click(function () {
     myFullpage.moveTo(1);
 });
-//모바일 숨켰다 나오기
+//1279이하 상단 이동버튼 이벤트
 const scrollingTop = document.querySelector(".btn-bottom-wrap");
 
 window.addEventListener("scroll", () => {
-    // 스크롤 위치를 확인하여 스크롤이 아래로 내려갈 때와 위로 올라갈 때의 애니메이션을 제어합니다.
-    if (window.scrollY > 100) { // 스크롤 위치가 100px 이상일 때
-        scrollingTop.classList.add("on"); // 박스에 "scrolled" 클래스를 추가하여 스타일을 변경합니다.
+   
+    if (window.scrollY > 100) { 
+        scrollingTop.classList.add("on");
     } else {
-        scrollingTop.classList.remove("on"); // 박스에서 "scrolled" 클래스를 제거하여 스타일을 변경합니다.
+        scrollingTop.classList.remove("on"); 
     }
 });
 
 
 
-//gnb
+//상단 메뉴 부분
 $('.gnb .nav-list').hover(function(){
 
     if($(this).find('.sub').length){
@@ -83,19 +67,14 @@ $('.gnb .nav-list').hover(function(){
 
 
 
-// const slidemenuTl = gsap.timeline({
-//         paused:true,
-//     })
-//     slidemenuTl
-//     .to('.header-inner .dimmed',.4,{opacity: 1,visibility: 'visible'},)
-//     .to('.header .slide-menu',.2,{xPercent:-100},)
-// slidemenu   
+//슬라이드 메뉴부분
 $('.btn-slide').click(function(){
         if($(this).hasClass('on')){
              $('.slide-menu').removeClass('on')
              $('body').removeClass('on')
 
              $('.nav').removeClass('on').siblings('.sub-list').stop().slideUp()
+             //전에 남아있던 아코디언 메뉴 컨트롤없애기
         }else{
             $('.slide-menu').addClass('on')
             $('body').addClass('on')
@@ -104,7 +83,7 @@ $('.btn-slide').click(function(){
         $(this).toggleClass('on')
         $('.line1,.line2,.line3').toggleClass('on')
 })
-
+//딤드눌렀을때 닫히도록
 $('.header-inner .dimmed').click(function(){
         $('.btn-slide,.line1,.line2,.line3').removeClass('on')
         $('.slide-menu').removeClass('on')
@@ -120,11 +99,12 @@ $('.nav').click(function(e){
     // $(this).toggleClass('on').siblings('.sub').slideToggle()
     if ($(this).hasClass('on')) {
         $('.nav').removeClass('on').siblings('.sub-list').stop().slideUp()
-        
     } else {
         $('.nav').removeClass('on').siblings('.sub-list').stop().slideUp()
+        //.nav같은 경우네는 전체 nav를 지칭한다
         $(this).addClass('on').siblings('.sub-list').stop().slideDown()
-
+        //this같은 경우에는 내가 선택한 nav이고 
+        //stop사용이유: 연타사용시 한번만 열리게 하기 위해
     }
 
   })
@@ -134,13 +114,15 @@ $('.nav').click(function(e){
 const scrollingBox = document.querySelector(".header .m-bg");
 
 window.addEventListener("scroll", () => {
-    // 스크롤 위치를 확인하여 스크롤이 아래로 내려갈 때와 위로 올라갈 때의 애니메이션을 제어합니다.
+
     if (window.scrollY > 100) { // 스크롤 위치가 100px 이상일 때
-        scrollingBox.classList.add("show"); // 박스에 "scrolled" 클래스를 추가하여 스타일을 변경합니다.
+        scrollingBox.classList.add("show");
     } else {
-        scrollingBox.classList.remove("show"); // 박스에서 "scrolled" 클래스를 제거하여 스타일을 변경합니다.
+        scrollingBox.classList.remove("show");
     }
 });
+
+
 
 //sc-visual
 //도형 움직임
@@ -151,13 +133,14 @@ $('.sc-visual .img-wrap .imgpo').each(function(i,el){
         h = $(this).height(); //높이값
         xVal = e.offsetX - w/2; //중심값잡아주기
         yVal = e.offsetY - h/2; //중심값잡아주기
+        //offset으로 선택한 요소의 좌표를 가져옴
     
         gsap.to($(this).find('img'), {
             rotateX:-xVal/10,
             rotateY:yVal/20
         });
     })
-    
+
 })
 
 
@@ -167,20 +150,18 @@ $('.sc-visual .img-wrap .imgpo').each(function(i,el){
 $(".sc-services .group-tab button").mouseover(function(){
 
     const thisNum = $(this).index();
+    //버튼 순서를 데이터값으로 선언하여
 
     $(".on-ic").css({
         'top': 'calc((100%/4)* ' + thisNum +')',
-        
+        //css에 top을 계산하여 표현
     })
     
 })
 //탭    
 const tabTl = gsap.timeline({})
 tabTl
-.to('.content #tab1',1.8,{opacity:1},"a")
-.to('.content #tab2',1.8,{opacity:1},"a")
-.to('.content #tab3',1.8,{opacity:1},"a")
-.to('.content #tab4',1.8,{opacity:1},"a")
+.to('.sc-services .content > *',1.8,{opacity:1},"a")
 
 $('.group-tab button').click(function(){
     
@@ -226,8 +207,8 @@ $('.sc-history .m-tab').click(function(e){
         $('.btn-wrap').stop().slideUp()
         $(this).removeClass('on')
     } else {
-        $(this).removeClass('on')
-        $('.btn-wrap').stop().slideUp()
+        $(this).removeClass('on') //on을 빼주어 on이 들어갈 수 있는 상태로 만들어놈
+        // $('.btn-wrap').stop().slideUp()
         $(this).addClass('on')
         $('.btn-wrap').stop().slideDown()
     }
@@ -236,18 +217,16 @@ $('.sc-history .m-tab').click(function(e){
 const buttons = document.querySelectorAll('.btn-wrap button');
 const output = document.getElementById('output');
 
-// 각 버튼에 클릭 이벤트 리스너를 추가합니다.
 buttons.forEach(button => {
     button.addEventListener('click', function() {
-        // 클릭한 버튼의 값으로 스팬의 텍스트를 업데이트합니다.
         output.textContent = this.value;
         $('.sc-history .m-tab').removeClass('on')
-        
+        //on을 제거하여 on클래스가 추가할 수 있는 상태로 만들어줌
     });
 });
 
 
-//슬라이드
+//tab 슬라이드
 const swiper = new Swiper('#slide1 .swiper', {
   navigation: {
     nextEl: ".next1",
@@ -303,8 +282,7 @@ const swiper6 = new Swiper('.news-slide', {
         el: ".sc-news .swiper-pagination",
         type: "progressbar",
       },
-    disableOnInteraction: false,
-    
+    //swiper 반응형 작업할때 breakpints를 사용하여 슬라이드보여지는 갯수를 설정
     breakpoints: {
         768: {
             slidesPerView: 3,  //브라우저가 768보다 클 때
@@ -328,8 +306,7 @@ document.addEventListener("mousemove", (e) => {
     gsap.to(customCursor, {
         x: e.clientX,
         y: e.clientY,
-        // duration: 0.2,
-        // ease: "power2.easeOut",
+        //마우스 따라다니도록 하기
     });
 });
 

@@ -597,8 +597,7 @@ body.on .dimmed{
     .header .slide-menu .slide-logo{
         display: block;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 20px;
         left: 25px;
         width: 18.8rem;
     }
